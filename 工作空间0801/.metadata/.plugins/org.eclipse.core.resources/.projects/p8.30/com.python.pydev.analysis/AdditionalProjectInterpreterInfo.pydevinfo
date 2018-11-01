@@ -1,0 +1,22 @@
+-- VERSION_5
+-- START DISKCACHE_2
+D:\工作空间0801\.metadata\.plugins\org.eclipse.core.resources\.projects\p8.30\com.python.pydev.analysis\v2_indexcache
+uu.ll|1535619925730171000|D:\工作空间0801\p8.30\uu\ll.py
+-- END DISKCACHE
+-- START DICTIONARY
+2
+2=uu.ll
+1=D:\工作空间0801\p8.30\uu\ll.py
+-- END DICTIONARY
+-- START TREE 1
+6
+day|1|days!1^25#1*19@
+key|1|Key!1^5#1*19@
+kk|1|kk!1^20#1*19@
+par|1|paragraph!1^38#1*19@
+sen|1|sentence!1^36#1*19@
+wor|1|word!1^35#1*19@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

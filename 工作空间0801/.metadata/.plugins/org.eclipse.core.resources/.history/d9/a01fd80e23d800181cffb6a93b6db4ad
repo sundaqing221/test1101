@@ -1,0 +1,17 @@
+package DDT_TabularParameterization;
+
+import org.openqa.selenium.WebDriver;
+
+public class startBrowser {
+	
+	
+	public static WebDriver driver;
+	
+	public static void openBrowser() {
+		
+		
+		
+	}
+	
+
+}

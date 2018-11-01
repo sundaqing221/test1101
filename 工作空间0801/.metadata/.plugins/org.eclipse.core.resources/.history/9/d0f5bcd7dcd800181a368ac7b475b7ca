@@ -1,0 +1,96 @@
+package framrwork;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+ 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+ 
+
+//跨浏览器
+public class BrowserEngine {
+	
+	public String browserName;
+	public String serverURL;
+	public WebDriver driver;
+	public void initConfigData() throws IOException{
+		Properties p = new Properties();
+		// 加载配置文件
+		InputStream ips = new FileInputStream(".\\TestConfig\\config.properties");
+		//.//代表根目录  目标工程根目录
+		p.load(ips);
+		Logger.Output(LogType.LogTypeName.INFO, "Start to select browser name from properties file");
+		browserName=p.getProperty("browserName");
+		Logger.Output(LogType.LogTypeName.INFO, "Your had select test browser type is: "+ browserName);
+		serverURL = p.getProperty("URL");
+		Logger.Output(LogType.LogTypeName.INFO, "The test server URL is: "+ serverURL);
+		ips.close();
+	}
+	
+	public WebDriver getBrowser(){
+		if(browserName.equalsIgnoreCase("Firefox")){
+			  System.setProperty(
+			    		"webdriver.gecko.driver",
+			    		"C:\\Program Files\\Mozilla Firefox\\geckodriver.exe"
+			    		);	
+			driver = new FirefoxDriver();
+			Logger.Output(LogType.LogTypeName.INFO, "Launching Firefox ...");
+			
+		}else if(browserName.equalsIgnoreCase("Chrome")){
+			
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("disable-infobars");
+			//设置不显示信息栏
+			//暂时失败
+			System.setProperty
+			(
+					"webdriver.chrome.driver", 
+					"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.exe"
+					)
+			;
+			//设置chrome.driver位置
+			System.setProperty 
+			(
+					"webdriver.chrome.bin" ,
+					"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+					); 
+			driver= new ChromeDriver(options);
+			Logger.Output(LogType.LogTypeName.INFO, "Launching Chrome ...");
+		}
+		
+		driver.get(serverURL);
+		Logger.Output(LogType.LogTypeName.INFO, "Open URL: "+ serverURL);
+		driver.manage().window().maximize();
+		Logger.Output(LogType.LogTypeName.INFO, "Maximize browser...");
+		callWait(5);
+		return driver;
+	}
+	
+	/*
+	 * 关闭浏览器并退出方法
+	 */
+	
+	public void tearDown() throws InterruptedException{
+		
+		Logger.Output(LogType.LogTypeName.INFO, "Closing browser...");
+		driver.quit();
+		Thread.sleep(3000);
+	}
+	
+	/*
+	 * 隐式时间等待方法
+	 */
+	public void callWait(int time){
+		
+		driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
+		Logger.Output(LogType.LogTypeName.INFO, "Wait for "+time+" seconds.");
+	}
+	
+}
+ 

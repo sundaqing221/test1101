@@ -1,0 +1,33 @@
+package executionEngine;
+
+import java.io.FileInputStream;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import utility.ExcelUtils;
+
+public class 读取excel数据 {
+	
+	  public static void main(String[] args) throws Exception {
+		  
+		    String excel_path = "D:\\工作空间0801\\T1016\\src\\dataEngine\\dataEngine.xlsx";
+	        // 加载读取excel文件
+		    FileInputStream fis = new FileInputStream(excel_path);
+	        ExcelUtils.setExcelFile(excel_path, "Test Steps");
+	    	// 加载workbook
+			@SuppressWarnings("resource")
+			XSSFWorkbook wb=new XSSFWorkbook(fis);
+			//加载sheet，这里我们只有一个sheet,默认是sheet1
+			XSSFSheet sh1= wb.getSheetAt(0);
+			String xx=sh1.getRow(0).getCell(0).getStringCellValue();
+			//获取1行1列数据
+			System.out.println(xx);
+			
+			
+			
+	 
+		  
+	  }
+
+}

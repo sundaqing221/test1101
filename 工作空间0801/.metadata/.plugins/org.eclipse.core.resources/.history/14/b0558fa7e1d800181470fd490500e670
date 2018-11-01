@@ -1,0 +1,28 @@
+package TESTSUITE;
+
+import java.io.IOException;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import OO.BrowserEngine;
+
+class DEMO {
+
+    public static WebDriver driver;
+	
+	@BeforeAll
+	public void setUp() throws IOException{
+		BrowserEngine browserEngine = new BrowserEngine();
+		browserEngine.initConfigData();
+		driver=browserEngine.getBrowser();
+	}
+	
+	
+	@Test
+	public void clickNews(){
+		driver.findElement(By.id("key")).sendKeys("iPhone 7");
+		driver.findElement(By.xpath("//*[@id='search']/div/div[2]/button")).click();
+		
+	}
+}

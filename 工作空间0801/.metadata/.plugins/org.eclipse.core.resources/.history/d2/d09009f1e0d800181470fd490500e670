@@ -1,0 +1,17 @@
+package OO;
+
+import org.openqa.selenium.WebDriver;
+
+public class PPP {
+	
+	public static WebDriver driver;
+
+	public static void main(String[] args) {
+		BrowserEngine browserEngine = new BrowserEngine();
+		browserEngine.initConfigData();
+		driver=browserEngine.getBrowser();
+		
+
+	}
+
+}

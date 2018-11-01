@@ -1,0 +1,10 @@
+2018-10-22 11:11:03,339 [main] INFO baidu - 隐式等待10秒
+2018-10-22 11:11:03,792 [main] INFO baidu - 打开百度首页
+2018-10-22 11:11:04,260 [main] INFO baidu - 在搜索输入框输入selenium
+2018-10-22 11:19:23,760 [main] INFO baidu - 隐式等待10秒
+2018-10-22 11:19:24,259 [main] INFO baidu - 打开百度首页
+2018-10-22 11:19:24,752 [main] INFO baidu - 在搜索输入框输入selenium
+2018-10-22 11:44:40,787 [main] INFO baidu - 隐式等待10秒
+2018-10-22 11:44:41,280 [main] INFO baidu - 打开百度首页
+2018-10-22 11:44:41,755 [main] INFO baidu - 在搜索输入框输入selenium
+2018-10-22 11:50:25,198 [main] INFO baidu - 隐式等待10秒

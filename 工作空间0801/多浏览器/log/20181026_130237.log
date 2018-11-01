@@ -1,0 +1,7 @@
+2018-10-26 13:02:37.909 INFO: Start to select browser name from properties file
+2018-10-26 13:02:37.909 INFO: Your had select test browser type is: Firefox
+2018-10-26 13:02:37.909 INFO: The test server URL is: http://re.jd.com/
+2018-10-26 13:02:40.462 INFO: Launching Firefox ...
+2018-10-26 13:02:41.525 INFO: Open URL: http://re.jd.com/
+2018-10-26 13:02:41.621 INFO: Maximize browser...
+2018-10-26 13:02:41.675 INFO: Wait for 5 seconds.

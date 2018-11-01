@@ -1,0 +1,6 @@
+2018-10-26 13:35:39.887 INFO: Start to select browser name from properties file
+2018-10-26 13:35:39.888 INFO: Your had select test browser type is: Chrome
+2018-10-26 13:35:39.888 INFO: The test server URL is: http://re.jd.com/
+2018-10-26 13:35:43.317 INFO: Open URL: http://re.jd.com/
+2018-10-26 13:35:44.438 INFO: Maximize browser...
+2018-10-26 13:35:44.443 INFO: Wait for 5 seconds.

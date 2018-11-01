@@ -1,0 +1,64 @@
+package DDT_TabularParameterization;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class loginDemo_testcase_pom {
+//定义打开的网址
+	public static String URL="http://ylkg-dev.e6best.com/manager/#/";
+	
+
+	
+	@BeforeAll
+	static void setUpBeforeClass() throws Exception {	
+		CustomMethod.openBrowser();
+		CustomMethod.openUrl(URL);
+	}
+
+	@AfterAll
+	static void tearDownAfterClass() throws Exception {
+		CustomMethod.closeBrowser();
+	}
+
+	@BeforeEach
+	void setUp() throws Exception {
+		
+	}
+
+	@AfterEach
+	void tearDown() throws Exception {
+		
+	}
+
+	@Test
+	void test() throws IOException {
+	    String excel_path = "D:\\工作空间0801\\T1016\\src\\dataEngine\\dataEngine.xlsx";
+	    // 加载读取excel文件
+	    FileInputStream fis = new FileInputStream(excel_path);
+	    @SuppressWarnings("resource")
+		XSSFWorkbook wb=new XSSFWorkbook(fis);
+		//加载sheet，这里我们只有一个sheet,默认是sheet1
+	    XSSFSheet sh1= wb.getSheetAt(0);
+	    String username;
+	    String password;
+	    for(int iRow=1;iRow<=7;iRow++) {
+	    	username =sh1.getRow(iRow).getCell(5).getStringCellValue(); 
+	    	password =sh1.getRow(iRow).getCell(6).getStringCellValue(); 
+	    	System.out.println(username+password);
+//	    	CustomMethod ll=new CustomMethod();
+//	    	ll.login(username, password);
+	    }
+	}
+
+}

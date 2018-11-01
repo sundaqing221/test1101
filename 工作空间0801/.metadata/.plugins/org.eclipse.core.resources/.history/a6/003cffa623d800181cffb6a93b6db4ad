@@ -1,0 +1,43 @@
+package DDT_TabularParameterization;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+//自定义方法
+
+public class  CustomMethod /*克斯疼 么得德*/ {
+	
+	public static WebDriver driver;
+	//启动谷歌浏览器
+	public static void openBrowser() {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("disable-infobars");
+		//设置不显示信息栏
+		//暂时失败
+		System.setProperty
+		(
+				"webdriver.chrome.driver", 
+				"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.exe"
+				)
+		;
+		//设置chrome.driver位置
+		System.setProperty 
+		(
+				"webdriver.chrome.bin" ,
+				"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+				); 
+		driver=new ChromeDriver(options);
+	}
+	//打开网址
+	public static void openUrl(String url) {
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.get(url);
+ 
+    }
+	
+
+}

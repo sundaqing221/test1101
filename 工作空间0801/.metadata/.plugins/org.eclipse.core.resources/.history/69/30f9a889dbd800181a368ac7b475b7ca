@@ -1,0 +1,21 @@
+package testsuite;
+
+import java.io.IOException;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import framrwork.BrowserEngine;
+ 
+
+public class TestLaunchBrowser1 {
+	   public WebDriver driver;
+	   
+	public void initConfigData() throws IOException{
+		BrowserEngine browserEngine = new BrowserEngine();
+		browserEngine.initConfigData();
+		driver=browserEngine.getBrowser();
+		driver.findElement(By.id("key")).sendKeys("iPhone 7");
+		driver.findElement(By.xpath("//*[@id='search']/div/div[2]/button")).click();
+		driver.quit();
+	}
+}
